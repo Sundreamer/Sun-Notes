@@ -1,4 +1,4 @@
-# myvue
+# SunNotes
 
 > A Vue.js project
 
