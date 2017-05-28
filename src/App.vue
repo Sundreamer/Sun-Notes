@@ -1,23 +1,45 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png">
+        <toolbar></toolbar>
+        <note-list></note-list>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
+import Toolbar from './components/Toolbar'
+import NoteList from './components/NoteList'
+import { mapActions } from 'vuex'
+
 export default {
-    name: 'app'
+    name: 'app',
+    components: {
+        Toolbar,
+        NoteList,
+    },
+    methods: {
+        ...mapActions([
+            'initStore'     // 映射 this.initStore() 为 this.$store.dispatch('initStore')
+        ]),
+    },
+    created () {
+        this.initStore();
+    },
 }
 </script>
 
 <style>
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+html, #app {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 </style>

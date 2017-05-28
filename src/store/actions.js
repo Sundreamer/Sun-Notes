@@ -1,6 +1,6 @@
 // 生成 action 方法
 function makeAction(type) {
-    return ({ dispatch }, ...args) => dispatch(type, ...args);
+    return ({ commit }, ...args) => commit(type, ...args);
 }
 
 // 初始化第一篇笔记
@@ -19,8 +19,8 @@ const initData = {
 };
 
 // 初始化状态
-export const initStore = ({ dispatch }) => {
-    dispatch('INIT_STORE', initData);
+export const initStore = ({ commit }) => {
+    commit('INIT_STORE', initData);
 };
 // 更新当前的 activeNote 对象
 export const updateActiveNote = makeAction('SET_ACTIVE_NOTE');
@@ -29,7 +29,7 @@ export const updateActiveNote = makeAction('SET_ACTIVE_NOTE');
 export const newNote = makeAction('NEW_NOTE');
 
 // 删除一个 note 对象
-export const deleteNote = makeAction('DELETE_NOTE');
+export const deleteNote = makeAction('DEL_NOTE');
 
 // 切换 Note 的收藏状态
 export const toggleFavorite = makeAction('TOGGLE_FAVORITE');
@@ -38,4 +38,4 @@ export const toggleFavorite = makeAction('TOGGLE_FAVORITE');
 export const editNote = makeAction('EDIT_NOTE');
 
 // 更新列表展示模式
-export const updateShow = makeAction('SET_SHOW_ALL');
+export const toggleShow = makeAction('SET_SHOW');
