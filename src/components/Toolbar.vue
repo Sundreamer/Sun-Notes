@@ -1,9 +1,9 @@
 <template>
     <div id="toolbar">
         <i class="glyphicon logo"><img src="../assets/logo.png" width="30" height="30"></i>
-        <i class="glyphicon glyphicon-plus" @click="newEditNote"></i>
-        <i class="glyphicon glyphicon-star" @click="toggleFavorite" :class="{starred: activeNote.favorite}"></i>
-        <i class="glyphicon glyphicon-remove" @click="deleteNote"></i>
+        <i class="glyphicon glyphicon-plus" @click="newEditNote" title="新建笔记"></i>
+        <i class="glyphicon glyphicon-star" @click="toggleFavorite" title="收藏笔记" :class="{starred: activeNote.favorite}"></i>
+        <i class="glyphicon glyphicon-remove" @click="deleteNote" title="删除笔记"></i>
     </div>
 </template>
 

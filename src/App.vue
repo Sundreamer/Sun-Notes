@@ -2,7 +2,9 @@
     <div id="app">
         <toolbar></toolbar>
         <note-list></note-list>
-        <router-view></router-view>
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
     </div>
 </template>
 
@@ -41,5 +43,11 @@ body {
     margin: 0;
     padding: 0;
     border: 0;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+    opacity: 0
 }
 </style>
