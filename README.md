@@ -27,3 +27,13 @@ npm install
 npm run dev
 
 ```
+
+## 后续要添加的一些功能
+
+- 笔记的标签分类管理
+
+- Markdown的代码高亮
+
+- 使用 `Node + Express + MongoDB` 来编写服务端
+
+- 暂时还没想到...

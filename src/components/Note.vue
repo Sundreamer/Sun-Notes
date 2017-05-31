@@ -54,6 +54,7 @@ export default {
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 14px;
+    line-height: 1.5em;
     border-left: 8px solid #d6dbdd;
     background: #F2F4F6;
 }
