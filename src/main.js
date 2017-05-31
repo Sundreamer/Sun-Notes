@@ -13,5 +13,14 @@ new Vue({
     router,
     store,
     template: '<App/>',
-    components: { App }
+    components: { App },
+    methods: {
+        save () {
+            var notes = JSON.stringify(this.$store.state);
+            window.localStorage.setItem('noteStore', notes);
+        }
+    },
+    mounted () {
+        window.onbeforeunload = this.save;
+    },
 })

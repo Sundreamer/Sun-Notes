@@ -38,7 +38,7 @@ export default {
 /* markdown 转换后的标签样式 */
 .markdown a { text-decoration: none; }
 .markdown img { margin: 10px 0; }
-.markdown li { margin: 5px 0; }
+.markdown li { margin: 10px 0; }
 .markdown p {
     line-height: 1.5em;
     margin: 10px 0;
@@ -58,7 +58,7 @@ export default {
     background: #F2F4F6;
 }
 .markdown code {
-    padding: 5px;
+    padding: 3px 5px;
     font-family: 'Consolas';
     font-size: 14px;
     color: #D3514E;

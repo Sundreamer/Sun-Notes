@@ -3,7 +3,7 @@ function makeAction(type) {
     return ({ commit }, ...args) => commit(type, ...args);
 }
 
-// 初始化第一篇笔记
+// 默认的第一篇笔记
 const initNote = {
     id: +new Date(),
     title: '我的笔记',
@@ -11,16 +11,25 @@ const initNote = {
     favorite: false,
 };
 
-// 模拟初始化数据
-const initData = {
-    show: 'all',
-    notes: [initNote],
-    activeNote: initNote,
-};
+// 从 localStorage 中读取保存的笔记数据
+function getNotes() {
+    var noteStore = window.localStorage.getItem('noteStore');
+    noteStore = noteStore ? JSON.parse(noteStore) : {};
+    if (!noteStore.show) {
+        noteStore.show = 'all';
+        noteStore.notes = [initNote];
+        noteStore.activeNote = initNote;
+    } else {
+        noteStore.activeNote = noteStore.notes.find(function (val) {
+            return val.id === noteStore.activeNote.id;
+        });
+    }
+    return noteStore;
+}
 
 // 初始化状态
 export const initStore = ({ commit }) => {
-    commit('INIT_STORE', initData);
+    commit('INIT_STORE', getNotes());
 };
 // 更新当前的 activeNote 对象
 export const updateActiveNote = makeAction('SET_ACTIVE_NOTE');
