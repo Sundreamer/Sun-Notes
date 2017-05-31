@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Editor from '@/components/Editor'
-import Note from '@/components/Note'
+// import Editor from '@/components/Editor'
+// import Note from '@/components/Note'
 
-// const Editor = resolve => require(['@/components/Editor'], resolve);
-// const Note = resolve => require(['@/components/Note'], resolve);
+const Editor = resolve => require(['@/components/Editor'], resolve);
+const Note = resolve => require(['@/components/Note'], resolve);
 
 Vue.use(Router)
 
